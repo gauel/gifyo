@@ -3,22 +3,15 @@
 
 	export let src = '';
 	export let alt = '';
-	export let lazy = true;
-	export let square = true;
-	export let hover = true;
-	export let width = 'w-full';
-	export let rounded = 'rounded-lg';
-	export let flex = true;
 	export let style = '';
 </script>
 
-<div class="img-wrapper relative {rounded} {width} {style}" class:hover class:flex-1={flex}>
-	<div class="ghost {rounded}" class:aspect-square={square} />
+<div class="img-wrapper relative {style}">
+	<div class="ghost" />
 	<img
 		use:lazyLoad={src}
-		class="relative z-10 {width} {rounded} object-cover opacity-0 transition-all duration-500"
-		class:aspect-square={square}
+		class="relative object-cover opacity-0 transition-opacity duration-300"
 		{alt}
-		loading={lazy ? 'lazy' : 'eager'}
+		loading='lazy'
 	/>
 </div>

@@ -5,7 +5,7 @@
 	let title = "Page title",
 	description = "Description",
 	shareImage = "/ogimage.jpg",
-	themeColor = "#10171D";
+	themeColor = "#000";
 </script>
 
 <!-- Hardcoded SEO -->
