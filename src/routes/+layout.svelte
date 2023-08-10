@@ -1,11 +1,19 @@
 <script>
 	import "$lib/app.css"
+	import Menu from "$lib/components/Menu.svelte";
+	import { onMount } from "svelte";
 
 	/* SEO */
 	let title = "Page title",
 	description = "Description",
 	shareImage = "/ogimage.jpg",
 	themeColor = "#000";
+
+	onMount(() => {
+		let pixelRatio = window.devicePixelRatio;
+		console.log("Pixel ratio:", pixelRatio);
+		document.querySelector(':root').style.setProperty('--pixel-ratio', pixelRatio);
+	})
 </script>
 
 <!-- Hardcoded SEO -->
@@ -34,3 +42,5 @@
 </svelte:head>
 
 <slot />
+
+<Menu />

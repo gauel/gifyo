@@ -90,7 +90,7 @@
 			id="camera"
 			bind:this={image}
 			src={img_placeholder}
-			class="w-full bg-black/10 dark:bg-white/10 rounded-xl mb-4 object-cover aspect-[3/4]"
+			class="w-[100vw] bg-black/10 dark:bg-white/10 rounded-xl mb-4 object-cover aspect-[3/4]"
 			alt=""
 		/>
 		<div class="create-menu flex justify-around text-white">

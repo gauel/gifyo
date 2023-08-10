@@ -8,14 +8,21 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	scrollbar-gutter: stable;
+	overflow: hidden scroll;
+	touch-action: pan-y;
+}
+
 html,
 body {
-	min-height: 100vh;
 	margin: 0;
+	color-scheme: dark;
 }
 
 .scroll-disabled {
 	overflow: hidden;
+	touch-action: none;
 }
 
 body {
@@ -27,24 +34,6 @@ body {
 ::-webkit-scrollbar {
 	background: transparent;
 	width: 10px;
-	cursor: grab;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-	transition-property: background;
-	transition-duration: 0.3s;
-	background: rgba(255, 255, 255, 0.1);
-	border-radius: 10px;
-	cursor: grab;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-	background: rgba(255, 255, 255, 0.2);
-}
-
-::-webkit-scrollbar-thumb:active {
 	cursor: grab;
 }
 
@@ -90,4 +79,13 @@ body {
 		rgba(0, 0, 0, 0.991353) 88.24%,
 		#000000 94.54%
 	);
+}
+
+:root {
+	--pixel-ratio: 1;
+}
+
+.xxx {
+	border: solid 1px cyan;
+	background-color: rgba(0, 255, 255, 0.2);
 }

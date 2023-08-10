@@ -38,8 +38,8 @@ declare module '$env/static/private' {
 	export const TERM: string;
 	export const SHELL: string;
 	export const npm_package_devDependencies_vite: string;
-	export const HOMEBREW_REPOSITORY: string;
 	export const TMPDIR: string;
+	export const HOMEBREW_REPOSITORY: string;
 	export const npm_package_scripts_lint: string;
 	export const TERM_PROGRAM_VERSION: string;
 	export const npm_package_scripts_dev: string;
@@ -72,6 +72,7 @@ declare module '$env/static/private' {
 	export const npm_package_scripts_preview: string;
 	export const npm_lifecycle_event: string;
 	export const LANG: string;
+	export const LOCAL_GIT_DIRECTORY: string;
 	export const npm_package_name: string;
 	export const npm_package_dependencies_video_js: string;
 	export const npm_config_resolution_mode: string;
@@ -89,8 +90,8 @@ declare module '$env/static/private' {
 	export const npm_package_devDependencies_autoprefixer: string;
 	export const npm_package_devDependencies_svelte_check: string;
 	export const npm_package_dependencies_svelte_fa: string;
-	export const SHLVL: string;
 	export const HOME: string;
+	export const SHLVL: string;
 	export const npm_package_type: string;
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
 	export const HOMEBREW_PREFIX: string;
@@ -101,8 +102,8 @@ declare module '$env/static/private' {
 	export const npm_config_user_agent: string;
 	export const VSCODE_GIT_ASKPASS_NODE: string;
 	export const GIT_ASKPASS: string;
-	export const INFOPATH: string;
 	export const HOMEBREW_CELLAR: string;
+	export const INFOPATH: string;
 	export const npm_package_dependencies__sveltejs_adapter_static: string;
 	export const npm_package_dependencies__fortawesome_free_regular_svg_icons: string;
 	export const npm_package_scripts_check: string;
@@ -151,8 +152,8 @@ declare module '$env/dynamic/private' {
 		TERM: string;
 		SHELL: string;
 		npm_package_devDependencies_vite: string;
-		HOMEBREW_REPOSITORY: string;
 		TMPDIR: string;
+		HOMEBREW_REPOSITORY: string;
 		npm_package_scripts_lint: string;
 		TERM_PROGRAM_VERSION: string;
 		npm_package_scripts_dev: string;
@@ -185,6 +186,7 @@ declare module '$env/dynamic/private' {
 		npm_package_scripts_preview: string;
 		npm_lifecycle_event: string;
 		LANG: string;
+		LOCAL_GIT_DIRECTORY: string;
 		npm_package_name: string;
 		npm_package_dependencies_video_js: string;
 		npm_config_resolution_mode: string;
@@ -202,8 +204,8 @@ declare module '$env/dynamic/private' {
 		npm_package_devDependencies_autoprefixer: string;
 		npm_package_devDependencies_svelte_check: string;
 		npm_package_dependencies_svelte_fa: string;
-		SHLVL: string;
 		HOME: string;
+		SHLVL: string;
 		npm_package_type: string;
 		VSCODE_GIT_ASKPASS_MAIN: string;
 		HOMEBREW_PREFIX: string;
@@ -214,8 +216,8 @@ declare module '$env/dynamic/private' {
 		npm_config_user_agent: string;
 		VSCODE_GIT_ASKPASS_NODE: string;
 		GIT_ASKPASS: string;
-		INFOPATH: string;
 		HOMEBREW_CELLAR: string;
+		INFOPATH: string;
 		npm_package_dependencies__sveltejs_adapter_static: string;
 		npm_package_dependencies__fortawesome_free_regular_svg_icons: string;
 		npm_package_scripts_check: string;
