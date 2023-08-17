@@ -39,6 +39,7 @@
 	<link href="/favicon.png" rel="icon" />
 	<link href="/touchicon.png" rel="shortcut icon" type="image/x-icon" />
 	<link href="/touchicon.png" rel="apple-touch-icon" />
+	<link href="manifest.json" rel="manifest" crossorigin="use-credentials" />
 </svelte:head>
 
 <slot />

@@ -21,7 +21,7 @@
 	use:clickOutside
 	on:click_outside={opened && toggleOpen}
 	id="menu"
-	class="fixed bottom-[calc(var(--safe-area-inset-bottom)+1rem)] right-4 overflow-hidden rounded-[16px] backdrop-blur-lg flex flex-col items-end justify-end
+	class="fixed bottom-[calc(var(--safe-area-inset-bottom)+1rem)] right-4 overflow-hidden rounded-[16px] backdrop-blur-lg flex flex-col items-end justify-end z-10
 	{opened ? "w-[220px] h-[290px] bg-neutral-800/60" : "w-[54px] h-[54px] bg-white/10"}"
 	class:opened={opened}
 >

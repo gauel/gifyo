@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 devDependencies:
   '@capacitor/android':
     specifier: ^5.2.2
@@ -46,6 +50,9 @@ devDependencies:
   eslint-plugin-svelte:
     specifier: ^2.26.0
     version: 2.28.0(eslint@8.40.0)(svelte@3.59.1)
+  gsap:
+    specifier: ^3.12.2
+    version: 3.12.2
   postcss:
     specifier: ^8.4.23
     version: 8.4.23
@@ -1324,6 +1331,10 @@ packages:
 
   /grapheme-splitter@1.0.4:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
+    dev: true
+
+  /gsap@3.12.2:
+    resolution: {integrity: sha512-EkYnpG8qHgYBFAwsgsGEqvT1WUidX0tt/ijepx7z8EUJHElykg91RvW1XbkT59T0gZzzszOpjQv7SE41XuIXyQ==}
     dev: true
 
   /has-flag@4.0.0:
