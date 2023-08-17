@@ -1,11 +1,15 @@
 {
 	"/": [
-		"src/routes/+page.js"
+		"src/routes/+page.js",
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
 	],
 	"/gif": [
-		"src/routes/gif/+page.js"
+		"src/routes/gif/+page.js",
+		"src/routes/+layout.js"
 	],
 	"/[gid]": [
-		"src/routes/[gid]/+page.js"
+		"src/routes/[gid]/+page.js",
+		"src/routes/+layout.js"
 	]
 }

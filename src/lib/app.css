@@ -12,6 +12,11 @@ html {
 	scrollbar-gutter: stable;
 	overflow: hidden scroll;
 	touch-action: pan-y;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 html,
@@ -28,13 +33,6 @@ body {
 body {
 	font-family: 'Inter';
 	height: 100%;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-	background: transparent;
-	width: 10px;
-	cursor: grab;
 }
 
 .gradient-to-b {
@@ -83,6 +81,8 @@ body {
 
 :root {
 	--pixel-ratio: 1;
+	--safe-area-inset-top: env(safe-area-inset-top);
+	--safe-area-inset-bottom: env(safe-area-inset-bottom);
 }
 
 .xxx {

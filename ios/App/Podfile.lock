@@ -1,0 +1,28 @@
+PODS:
+  - Capacitor (5.2.2):
+    - CapacitorCordova
+  - CapacitorCordova (5.2.2)
+  - CapacitorHaptics (5.0.6):
+    - Capacitor
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/.pnpm/@capacitor+ios@5.2.2_@capacitor+core@5.2.2/node_modules/@capacitor/ios`)"
+  - "CapacitorCordova (from `../../node_modules/.pnpm/@capacitor+ios@5.2.2_@capacitor+core@5.2.2/node_modules/@capacitor/ios`)"
+  - "CapacitorHaptics (from `../../node_modules/.pnpm/@capacitor+haptics@5.0.6_@capacitor+core@5.2.2/node_modules/@capacitor/haptics`)"
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/.pnpm/@capacitor+ios@5.2.2_@capacitor+core@5.2.2/node_modules/@capacitor/ios"
+  CapacitorCordova:
+    :path: "../../node_modules/.pnpm/@capacitor+ios@5.2.2_@capacitor+core@5.2.2/node_modules/@capacitor/ios"
+  CapacitorHaptics:
+    :path: "../../node_modules/.pnpm/@capacitor+haptics@5.0.6_@capacitor+core@5.2.2/node_modules/@capacitor/haptics"
+
+SPEC CHECKSUMS:
+  Capacitor: 070b18988e0f566728ae9a5eb3a7a974595f1626
+  CapacitorCordova: 3773395d5331add072300ff6041ca2cf7b93cb0b
+  CapacitorHaptics: 1fffc1217c7e64a472d7845be50fb0c2f7d4204c
+
+PODFILE CHECKSUM: ba54f24f8284516a2284f8cdcd15f755575e7814
+
+COCOAPODS: 1.12.1

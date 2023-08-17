@@ -20,7 +20,7 @@
 <svelte:head>
 	<meta charset="utf-8" />
 	<meta http-equiv="Content-Language" content="cs" />
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1, viewport-fit=cover" />
 
 	<title>{title}</title>
 	<meta name="description" content={description} />
