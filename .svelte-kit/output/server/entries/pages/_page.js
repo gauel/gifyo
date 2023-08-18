@@ -1,4 +1,4 @@
-import { P as PUBLIC_URL } from "../../chunks/public.js";
+const PUBLIC_URL = "http://127.0.0.1:1337";
 const load = async ({ fetch }) => {
   let gifs = [
     {
@@ -16,6 +16,7 @@ const load = async ({ fetch }) => {
     let url = `${PUBLIC_URL}/api/gifs?populate=*`;
     const response = await fetch(url);
     gifs = (await response.json())?.data || {};
+    console.log("gifs:", gifs);
   } catch (ex) {
     console.error("fetch api failed with", ex);
   }

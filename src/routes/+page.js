@@ -22,6 +22,7 @@ export const load = async ({ fetch }) => {
 		let url = `${PUBLIC_URL}/api/gifs?populate=*`
 		const response = await fetch(url);
 		gifs = (await response.json())?.data || {};
+		console.log("gifs:", gifs);
 	} catch (ex) {
 		console.error('fetch api failed with', ex);
 	}

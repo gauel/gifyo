@@ -16,19 +16,20 @@
 
 <button
 	class="post-wrapper aspect-[3/4] bg-white/5 rounded-xl"
-	class:scale-[0.98]={pointerdown}
 	on:pointerdown={setClicking}
 	on:pointercancel={unsetClicking}
 	on:pointerup
 >
-	<img
-		src={PUBLIC_URL + gif?.gif?.url}
-		alt=""
-		width="300"
-		height="400"
-		draggable="false"
-		class="rounded-xl aspect-[3/4] h-full object-cover w-full"
-	/>
+	<div class="img-wrapper">
+		<img
+			src={gif?.url}
+			alt=""
+			width="300"
+			height="400"
+			draggable="false"
+			class="rounded-xl aspect-[3/4] h-full object-cover w-full"
+		/>
+	</div>
 </button>
 
 <style lang="css">

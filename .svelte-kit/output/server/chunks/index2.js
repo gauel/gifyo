@@ -1,5 +1,6 @@
 function noop() {
 }
+const identity = (x) => x;
 function assign(tar, src) {
   for (const k in src)
     tar[k] = src[k];
@@ -13,9 +14,6 @@ function blank_object() {
 }
 function run_all(fns) {
   fns.forEach(run);
-}
-function is_function(thing) {
-  return typeof thing === "function";
 }
 function safe_not_equal(a, b) {
   return a != a ? b == b : a !== b || (a && typeof a === "object" || typeof a === "function");
@@ -34,7 +32,33 @@ function compute_slots(slots) {
   }
   return result;
 }
-/* @__PURE__ */ new Set();
+const is_client = typeof window !== "undefined";
+let now = is_client ? () => window.performance.now() : () => Date.now();
+let raf = is_client ? (cb) => requestAnimationFrame(cb) : noop;
+const tasks = /* @__PURE__ */ new Set();
+function run_tasks(now2) {
+  tasks.forEach((task) => {
+    if (!task.c(now2)) {
+      tasks.delete(task);
+      task.f();
+    }
+  });
+  if (tasks.size !== 0)
+    raf(run_tasks);
+}
+function loop(callback) {
+  let task;
+  if (tasks.size === 0)
+    raf(run_tasks);
+  return {
+    promise: new Promise((fulfill) => {
+      tasks.add(task = { c: callback, f: fulfill });
+    }),
+    abort() {
+      tasks.delete(task);
+    }
+  };
+}
 const globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : global;
 "WeakMap" in globals ? /* @__PURE__ */ new WeakMap() : void 0;
 /* @__PURE__ */ new Map();
@@ -167,13 +191,15 @@ export {
   create_ssr_component as c,
   subscribe as d,
   escape as e,
-  each as f,
+  assign as f,
   getContext as g,
-  safe_not_equal as h,
-  assign as i,
-  is_function as j,
+  each as h,
+  identity as i,
+  noop as j,
+  safe_not_equal as k,
+  loop as l,
   missing_component as m,
-  noop as n,
+  now as n,
   setContext as s,
   validate_component as v
 };
