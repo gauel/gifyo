@@ -1,6 +1,7 @@
-import { c as create_ssr_component, a as add_attribute, e as escape, v as validate_component, b as compute_slots } from "../../chunks/index2.js";
+import { c as create_ssr_component, a as add_attribute, e as escape, v as validate_component, b as compute_slots, d as subscribe } from "../../chunks/index2.js";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "@capacitor/haptics";
+import { s as state } from "../../chunks/store.js";
 const app = "";
 const parseNumber = parseFloat;
 function joinCss(obj, separator = ";") {
@@ -198,10 +199,12 @@ const MenuLink = create_ssr_component(($$result, $$props, $$bindings, slots) => 
 const Toggle_svelte_svelte_type_style_lang = "";
 const Menu_svelte_svelte_type_style_lang = "";
 const css = {
-  code: "#menu.svelte-o7o2mk{transition:opacity 200ms 0s cubic-bezier(0, .9, .76, .99),\n		width 200ms 0s cubic-bezier(0, .9, .76, .99),\n		height 200ms 0s cubic-bezier(0, .9, .76, .99),\n		border-radius 200ms 0s cubic-bezier(0, .9, .76, .99)}",
+  code: "#menu.svelte-nmyimh{transition:opacity 200ms 0s cubic-bezier(0, .9, .76, .99),\n		width 200ms 0s cubic-bezier(0, .9, .76, .99),\n		height 200ms 0s cubic-bezier(0, .9, .76, .99),\n		border-radius 200ms 0s cubic-bezier(0, .9, .76, .99),\n		transform 300ms 0s cubic-bezier(0, .9, .76, .99)}",
   map: null
 };
 const Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $state, $$unsubscribe_state;
+  $$unsubscribe_state = subscribe(state, (value) => $state = value);
   $$result.css.add(css);
   let $$settled;
   let $$rendered;
@@ -211,7 +214,10 @@ const Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       "fixed bottom-[calc(var(--safe-area-inset-bottom)+1rem)] right-4 overflow-hidden rounded-[16px] backdrop-blur-lg flex flex-col items-end justify-end z-10 " + escape(
         "w-[54px] h-[54px] bg-white/10",
         true
-      ) + " svelte-o7o2mk",
+      ) + " " + escape(
+        $state.opened ? "translate-y-[calc(100%+var(--safe-area-inset-bottom)+1rem)]" : "translate-y-none",
+        true
+      ) + " svelte-nmyimh",
       ""
     ].join(" ").trim()}">${``}
 		${validate_component(MenuLink, "MenuLink").$$render(
@@ -230,6 +236,7 @@ const Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 </button>`;
   } while (!$$settled);
+  $$unsubscribe_state();
   return $$rendered;
 });
 let title = "Page title", description = "Description", shareImage = "/ogimage.jpg", themeColor = "#000";

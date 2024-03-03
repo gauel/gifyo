@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(Flip);
 
-const superease = 'M0,0 C0.016,0.456 0.034,0.674 0.192,0.822 0.384,1.002 0.59,1 1,1 ';
+const superease = 'M0,0,C0.218,0,0.382,0.294,0.556,0.648,0.638,0.815,0.694,1,1,1';
 const customease =
 	'M0,0,C0,0,0.119,-0.012,0.202,0.052,0.424,0.228,0.365,0.575,0.61,0.838,0.75,0.988,1,1,1,1';
 

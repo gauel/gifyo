@@ -1,4 +1,4 @@
-import { f as assign, n as now, l as loop, i as identity, c as create_ssr_component, a as add_attribute, d as subscribe, e as escape, h as each, v as validate_component } from "../../chunks/index2.js";
+import { f as assign, n as now, l as loop, i as identity, c as create_ssr_component, a as add_attribute, e as escape, d as subscribe, h as each, v as validate_component } from "../../chunks/index2.js";
 import { gsap } from "gsap/dist/gsap.js";
 import { CustomEase } from "gsap/dist/CustomEase.js";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js";
@@ -6,14 +6,22 @@ import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin.js";
 import { Flip } from "gsap/dist/Flip.js";
 import { w as writable } from "../../chunks/index.js";
 import "@capacitor/haptics";
+import { s as state } from "../../chunks/store.js";
 function expoOut(t) {
   return t === 1 ? t : 1 - Math.pow(2, -10 * t);
+}
+function quadInOut(t) {
+  t /= 0.5;
+  if (t < 1)
+    return 0.5 * t * t;
+  t--;
+  return -0.5 * (t * (t - 2) - 1);
 }
 gsap.registerPlugin(CustomEase);
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(Flip);
-const superease = "M0,0 C0.016,0.456 0.034,0.674 0.192,0.822 0.384,1.002 0.59,1 1,1 ";
+const superease = "M0,0,C0.218,0,0.382,0.294,0.556,0.648,0.638,0.815,0.694,1,1,1";
 const customease = "M0,0,C0,0,0.119,-0.012,0.202,0.052,0.424,0.228,0.365,0.575,0.61,0.838,0.75,0.988,1,1,1,1";
 CustomEase.create("custom", superease);
 CustomEase.create("custom", customease);
@@ -146,21 +154,17 @@ function tweened(value, defaults = {}) {
     subscribe: store.subscribe
   };
 }
-const Post_svelte_svelte_type_style_lang = "";
-const css$1 = {
-  code: ".post-wrapper.svelte-1r42x42{transition:transform 200ms 0s ease-in-out}",
-  map: null
-};
 const Post = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { gif = {} } = $$props;
   if ($$props.gif === void 0 && $$bindings.gif && gif !== void 0)
     $$bindings.gif(gif);
-  $$result.css.add(css$1);
-  return `<button class="post-wrapper aspect-[3/4] bg-white/5 rounded-xl svelte-1r42x42"><div class="img-wrapper"><img${add_attribute("src", gif?.url, 0)} alt="" width="300" height="400" draggable="false" class="rounded-xl aspect-[3/4] h-full object-cover w-full"></div>
-</button>`;
+  return `<button class="post-wrapper aspect-[3/4] "><div class="img-wrapper"><img${add_attribute("src", gif?.url, 0)} alt="" width="300" height="400" draggable="false" class="post aspect-[3/4] h-full object-cover w-full"></div></button>`;
 });
 const Heart = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 7.56605C28 -2.52396 14.913 -1.54211 14 4.78161C13.087 -1.54211 0 -2.52396 0 7.56605C0 15.6381 9.33333 21.8854 14 24C18.6667 21.8854 28 15.6381 28 7.56605Z" fill="currentcolor"></path></svg>`;
+  let { style = "" } = $$props;
+  if ($$props.style === void 0 && $$bindings.style && style !== void 0)
+    $$bindings.style(style);
+  return `<svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="${"transition-color duration-300 " + escape(style, true)}"><path d="M28 7.56605C28 -2.52396 14.913 -1.54211 14 4.78161C13.087 -1.54211 0 -2.52396 0 7.56605C0 15.6381 9.33333 21.8854 14 24C18.6667 21.8854 28 15.6381 28 7.56605Z" fill="currentcolor"></path></svg>`;
 });
 const Comment = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.1141 18.2282C25.3108 16.4126 26 14.2806 26 12C26 5.37258 20.1797 0 13 0C5.8203 0 0 5.37258 0 12C0 18.6274 5.8203 24 13 24C15.6411 24 18.0983 23.273 20.1495 22.0239L24.2553 22.7089C25.0226 22.8369 25.6358 22.0784 25.3499 21.355L24.1141 18.2282Z" fill="currentcolor"></path></svg>`;
@@ -170,65 +174,77 @@ const Report = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 const _page_svelte_svelte_type_style_lang = "";
 const css = {
-  code: ".opening.svelte-17fzeln{transition:0ms background-color 0s ease-in-out}.closing.svelte-17fzeln{transition:500ms background-color 0s ease-in-out, 0s transform 500ms}",
+  code: ".opening.svelte-1d4d6lw{transition:0ms background-color 0s ease-in-out}.closing.svelte-1d4d6lw{transition:500ms background-color 0s ease-in-out, 0s transform 500ms}img.post{transition:500ms border-radius 0s ease-in-out}.img-wrapper img{border-radius:16px}#gif-preview img{border-top-left-radius:40px;border-top-right-radius:40px;border-bottom-left-radius:24px;border-bottom-right-radius:24px}",
   map: null
 };
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $state, $$unsubscribe_state;
+  let $$unsubscribe_pointerMoveY;
   let $bgOpacity, $$unsubscribe_bgOpacity;
   let $$unsubscribe_scaleImg;
-  let $dragPosition, $$unsubscribe_dragPosition;
-  let gifPreviewWrapper, scaleImg = tweened(1, { easing: expoOut, duration: 1500 }), bgOpacity = tweened(0, { easing: expoOut, duration: 600 }), detailWrapper, dragPosition = tweened({ x: 0, y: 0 }, { easing: expoOut, duration: 350 });
+  let $$unsubscribe_pointerMoveX;
+  $$unsubscribe_state = subscribe(state, (value) => $state = value);
+  let gifPreviewWrapper, mainGrid, modalScrollY = 0, animationDuration = 400, pointerMoveX = tweened(0, { easing: expoOut, duration: 0 }), pointerMoveY = tweened(0, { easing: expoOut, duration: 0 }), scaleImg = tweened(1, { easing: quadInOut, duration: 0 }), bgOpacity = tweened(0, {
+    easing: expoOut,
+    duration: animationDuration
+  }), detailWrapper, liked = false;
+  $$unsubscribe_pointerMoveX = subscribe(pointerMoveX, (value) => value);
+  $$unsubscribe_pointerMoveY = subscribe(pointerMoveY, (value) => value);
   $$unsubscribe_scaleImg = subscribe(scaleImg, (value) => value);
   $$unsubscribe_bgOpacity = subscribe(bgOpacity, (value) => $bgOpacity = value);
-  $$unsubscribe_dragPosition = subscribe(dragPosition, (value) => $dragPosition = value);
   let { data } = $$props;
   if ($$props.data === void 0 && $$bindings.data && data !== void 0)
     $$bindings.data(data);
   $$result.css.add(css);
-  {
-    $dragPosition.y, (() => {
-      $dragPosition.y < 0 ? true : false;
-    })();
-  }
+  $$unsubscribe_state();
+  $$unsubscribe_pointerMoveY();
   $$unsubscribe_bgOpacity();
   $$unsubscribe_scaleImg();
-  $$unsubscribe_dragPosition();
-  return `<div class="text-white relative"><div class="${"fixed top-0 left-0 h-[20%] z-[99] w-full gradient-to-b pointer-events-none transition-opacity duration-500 ease-in-out -translate-y-px " + escape("opacity-100", true)}"></div>
-	<div class="fixed bottom-0 left-0 h-24 z-[99] w-full gradient-to-t pointer-events-none"></div>
-	<div class="${"grid grid-cols-2 gap-2 py-12 transition-transform duration-[800ms] ease-out " + escape("pointer-events-auto", true)}"><div class="${"backdrop fixed top-0 left-0 w-full h-full bg-black pointer-events-none z-[1] transition-opacity duration-[800ms] " + escape("opacity-50", true)}" style="${"background-color: rgba(0,0,0," + escape($bgOpacity, true) + ");"}"></div>
+  $$unsubscribe_pointerMoveX();
+  return `<div class="text-white relative"><div class="${"fixed top-0 left-0 h-[20%] z-[105] w-full gradient-to-b pointer-events-none transition-all duration-500 ease-in-out -translate-y-px " + escape(
+    $state.opened ? "opacity-0 -translate-y-full" : "opacity-100 translate-y-none",
+    true
+  )}"></div>
+	<div class="fixed bottom-0 left-0 h-24 z-[9] w-full gradient-to-t pointer-events-none"></div>
+
+
+	<div class="${"grid grid-cols-2 gap-2 " + escape(
+    $state.moving ? "transition-none" : "transition-transform",
+    true
+  ) + " duration-[600ms] ease-[0.212,0.114,0.242,0.2815] " + escape(
+    $state.opened ? "pointer-events-none" : "pointer-events-auto",
+    true
+  )}"${add_attribute("this", mainGrid, 0)}><div class="${"backdrop fixed top-0 left-0 w-full h-full bg-black pointer-events-none z-[1] " + escape($state.moving ? "transition-none" : "transition-opacity", true) + " duration-[400ms] " + escape($state.opened ? "opacity-100" : "opacity-50", true)}" style="${"background-color: rgba(0,0,0," + escape($bgOpacity, true) + ");"}"></div>
+		<h1 class="text-white font-bold text-[36px]/none px-1 mt-12 mb-4 col-span-2">Feed</h1>
 		${each(data?.gifs, (gif, index) => {
     return `${validate_component(Post, "Post").$$render($$result, { gif }, {}, {})}`;
   })}</div>
 	<div id="detail" class="${"h-screen w-full rounded-t-[0px] fixed top-0 left-0 z-[99] overflow-y-scroll flex flex-col " + escape(
-    "translate-y-full closing",
+    $state.opened ? "translate-y-0 opening pointer-events-auto" : "translate-y-0 closing pointer-events-none",
     true
   ) + " " + escape(
-    "pointer-events-auto",
+    "pointer-events-none",
     true
-  ) + " svelte-17fzeln"}"${add_attribute("this", detailWrapper, 0)}><button id="gif-preview" class="aspect-[3/4] w-full flex-shrink-0"${add_attribute("this", gifPreviewWrapper, 0)}></button>
+  ) + " svelte-1d4d6lw"}"${add_attribute("this", detailWrapper, 0)}><button id="gif-preview" class="aspect-[3/4] w-full flex-shrink-0"${add_attribute("this", gifPreviewWrapper, 0)}></button>
 
 		<div class="${"post-menu mx-4 flex gap-4 h-[64px] flex-shrink-0 " + escape(
-    "opacity-0 translate-y-[300px] transition-all duration-300",
+    $state.opened ? "opacity-100 transition-opacity duration-300" : "opacity-0 translate-y-[300px] transition-all duration-300",
     true
   )}"${add_attribute(
     "style",
-    "",
+    $state.opened && $state.moving ? `transform: translateY(${-1 * modalScrollY}px)` : "",
     0
-  )}><div class="flex gap-2 items-center"><div class="h-[42px] w-[42px] rounded-full bg-white/10"></div>
-				<div class="flex flex-col gap-1.5"><div class="text-sm/none font-medium">${escape($dragPosition.y)}</div>
+  )}><div class="flex gap-2 items-center"><div class="h-[42px] w-[42px] rounded-full bg-white/10 shrink-0"></div>
+				<div class="flex flex-col gap-1.5"><div class="text-sm/none font-medium">gabriel.uhlir</div>
 					<div class="text-xs/none opacity-50">4h ago</div></div></div>
 			<div class="flex items-center gap-4 ml-auto text-white/20">${validate_component(Report, "Report").$$render($$result, {}, {}, {})}
-				${validate_component(Comment, "Comment").$$render($$result, {}, {}, {})}
-				${validate_component(Heart, "Heart").$$render($$result, {}, {}, {})}</div></div>
-		<div class="${"h-[800px] bg-white/10 flex-shrink-0 transition-transform duration-[400ms] " + escape(
-    "translate-y-full ease-in",
+				<button>${validate_component(Heart, "Heart").$$render($$result, { style: liked }, {}, {})}</button></div></div>
+		<div class="${"h-[800px] bg-neutral-900 flex-shrink-0 rounded-t-[24px] px-4 pt-4 transition-all duration-[400ms] ease-[cubic-bezier(.2,.8,.2,1)] " + escape(
+    $state.opened ? "translate-y-0 opacity-100 ease-out" : "translate-y-[64px] opacity-0 pointer-events-none ease-in",
     true
-  )}"${add_attribute(
-    "style",
-    "",
-    0
-  )}>Comments
-		</div></div>
+  )}"><div class="flex gap-2 text-white/50"><div class="w-[42px] flex justify-center text-white/10">${validate_component(Comment, "Comment").$$render($$result, {}, {}, {})}</div>
+				Comments
+			</div></div></div>
 </div>`;
 });
 export {

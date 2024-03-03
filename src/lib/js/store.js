@@ -23,10 +23,13 @@ export function store(name, data, save = false) {
 }
 
 /* These settings are saved to a local storage */
-const storeDefaults = {}
+const settingsDefault = {}
 
 /* These settings are global variables that resets with every page refresh */
-const stateDefaults = {}
+const stateDefaults = {
+	opened: false,
+	moving: false
+}
 
-export const store = store("settings", storeDefaults, true);
+export const settings = store("settings", settingsDefault, true);
 export const state = store("glob", stateDefaults);

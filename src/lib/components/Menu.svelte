@@ -3,6 +3,7 @@
 	import { faXmark, faBars, faPlus, faCircleUser, faMagnifyingGlass, faBell } from '@fortawesome/free-solid-svg-icons'
 	import MenuLink from './MenuLink.svelte';
 	import { Haptics, ImpactStyle } from '@capacitor/haptics';
+	import { state } from '$lib/js/store';
 
 	let opened = false,
 	following = false;
@@ -22,7 +23,8 @@
 	on:click_outside={opened && toggleOpen}
 	id="menu"
 	class="fixed bottom-[calc(var(--safe-area-inset-bottom)+1rem)] right-4 overflow-hidden rounded-[16px] backdrop-blur-lg flex flex-col items-end justify-end z-10
-	{opened ? "w-[220px] h-[290px] bg-neutral-800/60" : "w-[54px] h-[54px] bg-white/10"}"
+	{opened ? "w-[220px] h-[290px] bg-neutral-800/60" : "w-[54px] h-[54px] bg-white/10"}
+	{$state.opened ? "translate-y-[calc(100%+var(--safe-area-inset-bottom)+1rem)]" : "translate-y-none"}"
 	class:opened={opened}
 >
 
@@ -58,7 +60,8 @@
 		transition: opacity 200ms 0s cubic-bezier(0, .9, .76, .99),
 		width 200ms 0s cubic-bezier(0, .9, .76, .99),
 		height 200ms 0s cubic-bezier(0, .9, .76, .99),
-		border-radius 200ms 0s cubic-bezier(0, .9, .76, .99);
+		border-radius 200ms 0s cubic-bezier(0, .9, .76, .99),
+		transform 300ms 0s cubic-bezier(0, .9, .76, .99);
 	}
 
 
