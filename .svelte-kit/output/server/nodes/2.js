@@ -1,9 +1,10 @@
-import * as universal from '../entries/pages/_page.js';
+import * as universal from '../entries/pages/auth/_layout.js';
 
 export const index = 2;
-export const component = async () => (await import('../entries/pages/_page.svelte.js')).default;
+let component_cache;
+export const component = async () => component_cache ??= (await import('../entries/pages/auth/_layout.svelte.js')).default;
 export { universal };
-export const universal_id = "src/routes/+page.js";
-export const imports = ["_app/immutable/nodes/2.6c6c8a26.js","_app/immutable/chunks/index.6ad95c8d.js","_app/immutable/chunks/index.aa27febf.js","_app/immutable/chunks/store.e1663b9d.js","_app/immutable/chunks/preload-helper.41c905a7.js"];
-export const stylesheets = ["_app/immutable/assets/2.4803a84e.css"];
+export const universal_id = "src/routes/auth/+layout.js";
+export const imports = ["_app/immutable/nodes/2.516bec09.js","_app/immutable/chunks/index.260e4b2f.js","_app/immutable/chunks/Menu.svelte_svelte_type_style_lang.32d3f67f.js","_app/immutable/chunks/index.3850d28c.js","_app/immutable/chunks/index.957a5efe.js","_app/immutable/chunks/store.9a8bff77.js","_app/immutable/chunks/preload-helper.a4192956.js","_app/immutable/chunks/index.e0ad881e.js"];
+export const stylesheets = ["_app/immutable/assets/Menu.c87d5a44.css"];
 export const fonts = [];

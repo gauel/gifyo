@@ -23,6 +23,7 @@ html,
 body {
 	margin: 0;
 	color-scheme: dark;
+	height: 100%;
 }
 
 .scroll-disabled {
@@ -81,8 +82,8 @@ body {
 
 :root {
 	--pixel-ratio: 1;
-	--safe-area-inset-top: env(safe-area-inset-top);
-	--safe-area-inset-bottom: env(safe-area-inset-bottom);
+	--safe-area-top: env(safe-area-inset-top);
+	--safe-area-bottom: env(safe-area-inset-bottom);
 }
 
 .xxx {

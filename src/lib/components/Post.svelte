@@ -2,6 +2,8 @@
 	import { PUBLIC_URL } from '$env/static/public';
 
 	export let gif = {};
+
+	console.log("Image:", gif);
 </script>
 
 <button
@@ -10,7 +12,7 @@
 >
 	<div class="img-wrapper">
 		<img
-			src={gif?.url}
+			src={PUBLIC_URL + "/assets/" + gif?.gif}
 			alt=""
 			width="300"
 			height="400"

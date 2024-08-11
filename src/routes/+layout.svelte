@@ -1,6 +1,6 @@
 <script>
 	import "$lib/app.css"
-	import Menu from "$lib/components/Menu.svelte";
+	import Menu from "$lib/components/ui/Menu.svelte";
 	import { onMount } from "svelte";
 
 	/* SEO */
@@ -21,6 +21,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="Content-Language" content="cs" />
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1, viewport-fit=cover" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 	<title>{title}</title>
 	<meta name="description" content={description} />
@@ -39,9 +40,7 @@
 	<link href="/favicon.png" rel="icon" />
 	<link href="/touchicon.png" rel="shortcut icon" type="image/x-icon" />
 	<link href="/touchicon.png" rel="apple-touch-icon" />
-	<link href="manifest.json" rel="manifest" crossorigin="use-credentials" />
+	<link href="/manifest.json" rel="manifest" crossorigin="use-credentials" />
 </svelte:head>
 
 <slot />
-
-<Menu />

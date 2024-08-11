@@ -1,7 +1,20 @@
 {
 	"/": [
-		"src/routes/+page.js",
 		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/auth": [
+		"src/routes/auth/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/auth/feed": [
+		"src/routes/auth/feed/+page.js",
+		"src/routes/auth/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/auth/new": [
+		"src/routes/auth/new/+page.js",
+		"src/routes/auth/+layout.js",
 		"src/routes/+layout.js"
 	]
 }

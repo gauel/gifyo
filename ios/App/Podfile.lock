@@ -1,28 +1,28 @@
 PODS:
-  - Capacitor (5.2.2):
+  - Capacitor (5.7.1):
     - CapacitorCordova
-  - CapacitorCordova (5.2.2)
-  - CapacitorHaptics (5.0.6):
+  - CapacitorCordova (5.7.1)
+  - CapacitorHaptics (5.0.7):
     - Capacitor
 
 DEPENDENCIES:
-  - "Capacitor (from `../../node_modules/.pnpm/@capacitor+ios@5.2.2_@capacitor+core@5.2.2/node_modules/@capacitor/ios`)"
-  - "CapacitorCordova (from `../../node_modules/.pnpm/@capacitor+ios@5.2.2_@capacitor+core@5.2.2/node_modules/@capacitor/ios`)"
-  - "CapacitorHaptics (from `../../node_modules/.pnpm/@capacitor+haptics@5.0.6_@capacitor+core@5.2.2/node_modules/@capacitor/haptics`)"
+  - "Capacitor (from `../../node_modules/.pnpm/@capacitor+ios@5.7.1_@capacitor+core@5.7.1/node_modules/@capacitor/ios`)"
+  - "CapacitorCordova (from `../../node_modules/.pnpm/@capacitor+ios@5.7.1_@capacitor+core@5.7.1/node_modules/@capacitor/ios`)"
+  - "CapacitorHaptics (from `../../node_modules/.pnpm/@capacitor+haptics@5.0.7_@capacitor+core@5.7.1/node_modules/@capacitor/haptics`)"
 
 EXTERNAL SOURCES:
   Capacitor:
-    :path: "../../node_modules/.pnpm/@capacitor+ios@5.2.2_@capacitor+core@5.2.2/node_modules/@capacitor/ios"
+    :path: "../../node_modules/.pnpm/@capacitor+ios@5.7.1_@capacitor+core@5.7.1/node_modules/@capacitor/ios"
   CapacitorCordova:
-    :path: "../../node_modules/.pnpm/@capacitor+ios@5.2.2_@capacitor+core@5.2.2/node_modules/@capacitor/ios"
+    :path: "../../node_modules/.pnpm/@capacitor+ios@5.7.1_@capacitor+core@5.7.1/node_modules/@capacitor/ios"
   CapacitorHaptics:
-    :path: "../../node_modules/.pnpm/@capacitor+haptics@5.0.6_@capacitor+core@5.2.2/node_modules/@capacitor/haptics"
+    :path: "../../node_modules/.pnpm/@capacitor+haptics@5.0.7_@capacitor+core@5.7.1/node_modules/@capacitor/haptics"
 
 SPEC CHECKSUMS:
-  Capacitor: 070b18988e0f566728ae9a5eb3a7a974595f1626
-  CapacitorCordova: 3773395d5331add072300ff6041ca2cf7b93cb0b
-  CapacitorHaptics: 1fffc1217c7e64a472d7845be50fb0c2f7d4204c
+  Capacitor: 6bd16626bc7a4a382eff16f6aed0072fe9776951
+  CapacitorCordova: b49f3372270c88fd9c633a4fc8c7ef00e47dd2d6
+  CapacitorHaptics: 7c7c206f0c96a628fed073830c96d28c4b2e772e
 
-PODFILE CHECKSUM: ba54f24f8284516a2284f8cdcd15f755575e7814
+PODFILE CHECKSUM: c0ca99c10e0b2905dedecd43845c329d85a32c9b
 
 COCOAPODS: 1.12.1
